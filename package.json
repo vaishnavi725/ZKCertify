@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "npm run dev --prefix app",
+    "build": "npm run build --prefix app",
+    "start": "npm run start --prefix app",
+    "lint": "npm run lint --prefix app"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.33.0",
+    "mongodb": "^7.1.0",
+    "mongoose": "^8.18.2",
+    "nodemailer": "^7.0.6",
+    "sonner": "^2.0.7"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^7.0.1"
+  }
+}

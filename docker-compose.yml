@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  prover:
+    build: .
+    ports:
+      - "3001:3001"
+    environment:
+      - SP1_PROVER=${SP1_PROVER:-mock}
+      - NETWORK_PRIVATE_KEY=${SUCCINCT_API_KEY}
+      - RUST_LOG=info
+
+  frontend:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=${MONGODB_URI}
+      - API_URL=http://localhost:3000
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
