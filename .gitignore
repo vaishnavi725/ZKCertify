@@ -10,11 +10,11 @@ target/
 book/
 
 # Generated WASM files
-**/pkg/
-*.wasm
-*.wasm.d.ts
-wasm.js
-wasm.d.ts
+# **/pkg/
+# *.wasm
+# *.wasm.d.ts
+# wasm.js
+# wasm.d.ts
 
 # Environment variables
 .env
